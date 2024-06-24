@@ -1,5 +1,5 @@
 ---
-title: "How to be a good ARCHER2 citizen"
+title: "How to be a good Cirrus citizen"
 teaching: 15
 exercises: 10
 questions:
@@ -58,10 +58,10 @@ with the *PID* to terminate any processes that are using large amounts of resour
 {: .challenge}
 
 If you experience performance issues with a login node you should report it to the
-[ARCHER2 Service Desk](https://www.archer2.ac.uk/support-access/servicedesk.html) for them
+[Cirrus Service Desk](https://www.archer2.ac.uk/support-access/servicedesk.html) for them
 to investigate.
 
-You should not use ARCHER2 login nodes to login to other, external services. Outgoing SSH
+You should not use Cirrus login nodes to login to other, external services. Outgoing SSH
 connections will be killed.
 
 ## Do not share your login credentials
@@ -69,13 +69,13 @@ connections will be killed.
 You should not share your login details (account name, passwords or SSH keys) with anyone else. If 
 we detect evidence of account sharing of this form we will require you to reset your access credentials.
 
-Accessing another ARCHER2 user account from your account is also not allowed (as this would
+Accessing another Cirrus user account from your account is also not allowed (as this would
 allow you to potentially capture the credentials for the other account). If we detect this
 behaviour, we will require both people involved to reset their access credentials.
 
 ## Test before scaling
 
-Remember that you are charged for usage on ARCHER2. A simple mistake in a 
+Remember that you are charged for usage on Cirrus. A simple mistake in a 
 job script can end up costing a large amount of your resource budget. Imagine a job script with 
 a mistake that makes it sit doing nothing for 24 hours on 1000 cores or one where you have
 requested 2000 cores by mistake and only use 100 of them. This problem can be compounded 
@@ -84,9 +84,9 @@ calculation or analysis over lots of different input).  When this happens it hur
 (as you waste lots of charged resource) and other users (who are blocked from accessing the
 idle compute nodes).
 
-Also, if ARCHER2 is very busy you may wait in the queue for your job to fail within 10 seconds
+Also, if Cirrus is very busy you may wait in the queue for your job to fail within 10 seconds
 of starting due to a trivial typo in the job script. This is extremely frustrating! You can 
-use the ARCHER2 short QoS to run short correctness tests on your job scripts before submitting
+use the Cirrus short QoS to run short correctness tests on your job scripts before submitting
 the full calculation.
 
 > ## Test job submission scripts that use large amounts of resource
@@ -109,8 +109,8 @@ the full calculation.
 
 ## Have a backup plan
 
-Although the ARCHER2 home file systems are backed up, the work file systems are not.
-Your data on ARCHER2 is primarily your responsibility and you should ensure you have secure copies of data
+Although the Cirrus home file systems are backed up, the work file systems are not.
+Your data on Cirrus is primarily your responsibility and you should ensure you have secure copies of data
 that are critical to your work.
 
 Version control systems (such as Git) often have free, cloud-based offerings (e.g. Github, Gitlab)
@@ -119,21 +119,21 @@ programs, these can be very useful for storing job scripts, analysis scripts and
 input files. 
 
 For larger amounts of data, you should make sure you have a robust system in place for taking
-copies of critical data off ARCHER2 wherever possible to backed-up storage. Tools such
+copies of critical data off Cirrus wherever possible to backed-up storage. Tools such
 as `rsync` can be very useful for this.
 
-Your access to ARCHER2 will generally be time-limited so you should ensure you have a
+Your access to Cirrus will generally be time-limited so you should ensure you have a
 plan for transferring your data off the system before your access finishes. The time required to
 transfer large amounts of data should not be underestimated and you should ensure you have planned
 for this early enough (ideally, before you even start using the system for your research).
 
-As already mentioned, the ARCHER2 User and Best Practice Guide provides a lot of useful information
+As already mentioned, the Cirrus User and Best Practice Guide provides a lot of useful information
 on managing and transferring your data. See:
 
 * https://docs.archer2.ac.uk/user-guide/
 
 > ## Your data is your responsibility
-> Make sure you understand what the backup policy is on ARCHER2 and what implications this has for
+> Make sure you understand what the backup policy is on Cirrus and what implications this has for
 > your work if you lose your data on the system. Plan your backups of critical data and how you will
 > transfer data off the system throughout the project. 
 {: .callout}
@@ -146,14 +146,14 @@ but the advice below applies in either case). Data transfer speed may be limited
 different factors so the best data transfer mechanism to use depends on the type of data being
 transferred and where the data is going. Some of the key issues to be aware of are:
 
-- **Disk speed** - The ARCHER2 work file systems are highly parallel, consisting of a very
+- **Disk speed** - The Cirrus work file systems are highly parallel, consisting of a very
   large number of high performance disk drives. This allows them to support a very high data
   bandwidth. Unless the remote system has a similar parallel file system you may find your
   transfer speed limited by disk performance at that end.
 - **Meta-data performance** - *Meta-data operations* such as opening and closing files or
   listing the owner or size of a file are much less parallel than read/write operations. If
   your data consists of a very large number of small files you may find your transfer speed is
-  limited by meta-data operations. Meta-data operations performed by other users on ARCHER2
+  limited by meta-data operations. Meta-data operations performed by other users on Cirrus
   can also interact strongly with your work so reducing the number of such operations
   you use (by combining multiple files into a single file) may reduce variability in your transfer
   rates and increase transfer speeds.

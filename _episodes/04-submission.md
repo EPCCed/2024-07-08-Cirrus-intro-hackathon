@@ -1,5 +1,5 @@
 ---
-title: "ARCHER2 scheduler: Slurm"
+title: "Cirrus scheduler: Slurm"
 teaching: 30
 exercises: 20
 questions:
@@ -8,16 +8,16 @@ questions:
 - "How do I find out what resources are available?"
 objectives:
 - "Understand the use of the basic Slurm commands."
-- "Know what components make up and ARCHER2 scheduler."
+- "Know what components make up and Cirrus scheduler."
 - "Know where to look for further help on the scheduler."
 keypoints:
-- "ARCHER2 uses the Slurm scheduler."
+- "Cirrus uses the Slurm scheduler."
 - "`srun` is used to launch parallel executables in batch job submission scripts."
 - "There are a number of different partitions (queues) available."
 ---
 
-ARCHER2 uses the Slurm job submission system, or *scheduler*, to manage resources and how they are made
-available to users. The main commands you will use with Slurm on ARCHER2 are:
+Cirrus uses the Slurm job submission system, or *scheduler*, to manage resources and how they are made
+available to users. The main commands you will use with Slurm on Cirrus are:
 
 * `sinfo`: Query the current state of nodes
 * `sbatch`: Submit non-interactive (batch) jobs to the scheduler
@@ -25,7 +25,7 @@ available to users. The main commands you will use with Slurm on ARCHER2 are:
 * `scancel`: Cancel a job
 * `srun`: Used within a batch job script or interactive job session to start a parallel program
 
-Full documentation on Slurm on ARCHER2 can be found in the [Running Jobs on ARCHER2](https://docs.archer2.ac.uk/user-guide/scheduler/) section of the ARCHER2 documentations.
+Full documentation on Slurm on Cirrus can be found in the [Running Jobs on Cirrus](https://docs.archer2.ac.uk/user-guide/scheduler/) section of the Cirrus documentations.
 
 ## Finding out what resources are available: `sinfo`
 
@@ -54,7 +54,7 @@ There is a row for each node state and partition combination. The default output
 
 * `PARTITION` - The system partition
 * `AVAIL` - The status of the partition - `up` in normal operation
-* `TIMELIMIT` - Maximum runtime as `days-hours:minutes:seconds`: on ARCHER2, these are set using *QoS*
+* `TIMELIMIT` - Maximum runtime as `days-hours:minutes:seconds`: on Cirrus, these are set using *QoS*
   (Quality of Service) rather than on partitions
 * `NODES` - The number of nodes in the partition/state combination
 * `STATE` - The state of the listed nodes (more information below)
@@ -74,7 +74,7 @@ If you prefer to see the state of individual nodes, you can use the `sinfo -N -l
 
 > ## Lots to look at!
 > Warning! The `sinfo -N -l` command will produce a lot of output as there are 5860 individual 
-> nodes on the current ARCHER2 system!
+> nodes on the current Cirrus system!
 {: .callout}
 
 ```
@@ -176,15 +176,15 @@ The options shown here are:
 * `--cpus-per-task=1` - Number of cores to allocate per parallel process 
 * `--time=0:10:0` - Set 10 minutes maximum walltime for this job
 * `--account=ta082` - Charge the job to the `ta082` budget
-* `--partition=standard` - Use nodes from the standard partition on ARCHER2 (the standard partition
+* `--partition=standard` - Use nodes from the standard partition on Cirrus (the standard partition
   includes all compute nodes).
 * `--qos=short` - Use the `short` Quality of Service (QoS). Different QoS define different limits
   for jobs. The short QoS allows small short jobs only but guarantees that they run quickly/straight away.
 
 > ## Partitions and QoS
-> There are a small number of different partitions on ARCHER2 (covering different node types) and
+> There are a small number of different partitions on Cirrus (covering different node types) and
 > a wider variety of QoS (covering different use cases). You can find a list of the available 
-> partitions and QoS in the [ARCHER2 User and Best Practice Guide](https://docs.archer2.ac.uk/user-guide/scheduler/#resource-limits).
+> partitions and QoS in the [Cirrus User and Best Practice Guide](https://docs.archer2.ac.uk/user-guide/scheduler/#resource-limits).
 {: .callout}
 
 We will discuss the `srun` command further below.
@@ -207,7 +207,7 @@ Slurm reports back with the job ID for the job you have submitted
 
 ### Checking progress of your job with `squeue`
 
-You use the `squeue` command to show the current state of the queues on ARCHER2. Without any options, it
+You use the `squeue` command to show the current state of the queues on Cirrus. Without any options, it
 will show all jobs in the queue:
 
 ```
@@ -574,7 +574,7 @@ locations.
 
 ### Underpopulation of nodes
 
-You may often want to *underpopulate* nodes on ARCHER2 to access more memory or more memory 
+You may often want to *underpopulate* nodes on Cirrus to access more memory or more memory 
 bandwidth per process or for other reasons. Underpopulation in this way is achieved by 
 altering the Slurm options, typically by setting the `--ntasks-per-node` option. You 
 usually also need to set the `--cpus-per-task` option to ensure that the processes are
@@ -1313,10 +1313,10 @@ Node    3, rank   31, thread  15, (affinity =  127)
 ```
 {: .output}
 
-Each ARCHER2 compute node is made up of 8 NUMA (*Non Uniform Memory Access*) regions (4 per socket) 
+Each Cirrus compute node is made up of 8 NUMA (*Non Uniform Memory Access*) regions (4 per socket) 
 with 16 cores in each region. Programs where the threads of a process span multiple NUMA regions
 are likely to be *much less* efficient so we recommend using thread counts that fit well into the
-ARCHER2 compute node layout. Effectively, this means one of the following options for hybrid jobs
+Cirrus compute node layout. Effectively, this means one of the following options for hybrid jobs
 on nodes where all cores are used:
 
 * 8 MPI processes per node and 16 OpenMP threads per process: equivalent to 1 MPI process per NUMA region
@@ -1374,7 +1374,7 @@ Node    0, rank   13, thread   0, (affinity = 81,209)
 
 <!-- Need to add information on the solid state storage and Slurm once it is in place
 
-### Using the ARCHER2 solid state storage
+### Using the Cirrus solid state storage
 
 -->
 

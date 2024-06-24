@@ -1,21 +1,21 @@
 ---
-title: "Overview of the ARCHER2 system"
+title: "Overview of the Cirrus system"
 teaching: 30
 exercises: 15
 questions:
-- "What hardware and software is available on ARCHER2?"
+- "What hardware and software is available on Cirrus?"
 - "How does the hardware fit together?"
 objectives:
-- "Gain an overview of the technology available on the ARCHER2 service."
+- "Gain an overview of the technology available on the Cirrus service."
 keypoints:
-- "ARCHER2 consists of high performance login nodes, compute nodes, storage systems and interconnect."
-- "There is a wide range of software available on ARCHER2."
+- "Cirrus consists of high performance login nodes, compute nodes, storage systems and interconnect."
+- "There is a wide range of software available on Cirrus."
 - "The system is based on standard Linux with command line access."
 ---
 
 ## Architecture
 
-The ARCHER2 HPE Cray EX system consists of a number of different node types. The ones visible
+The Cirrus HPE Cray EX system consists of a number of different node types. The ones visible
 to users are:
 
 * Login nodes
@@ -26,11 +26,11 @@ All of the node types have the same processors: AMD EPYC<sup>TM</sup> 7742, 2.25
 are dual socket nodes so there are 128 cores per node.
 
 {% include figure.html url="" max-width="80%" file="/fig/archer2_architecture.png" 
-alt="ARCHER2 architecture diagram" caption="ARCHER2 architecture" %}
+alt="Cirrus architecture diagram" caption="Cirrus architecture" %}
 
 ## Compute nodes
 
-There are 5,860 compute nodes in total, giving 750,080 compute cores on the full ARCHER2 system.
+There are 5,860 compute nodes in total, giving 750,080 compute cores on the full Cirrus system.
 Most of these (5,276 nodes) have 256 GiB memory per node, a smaller number (584 nodes) have 
 512 GiB memory per node. All of the compute nodes are linked together using the high-performance
 HPE Slingshot interconnect.
@@ -40,7 +40,7 @@ both batch jobs and interactive jobs.
 
 Compute node summary:
 
-| | ARCHER2 |
+| | Cirrus |
 |-|---------|
 | Processors | 2x AMD EPYC Zen2 (Rome) 7742, 2.25 GHz, 64-core |
 | Cores per node | 128 |
@@ -51,7 +51,7 @@ Compute node summary:
 
 ## Storage
 
-There are four different storage systems available on the current ARCHER2 service:
+There are four different storage systems available on the current Cirrus service:
 
 * Home file systems
 * Work file systems
@@ -61,7 +61,7 @@ There are four different storage systems available on the current ARCHER2 servic
 ### Home
 
 The home file systems are available on the login and data analysis nodes and are designed for the storage
-of critical source code and data for ARCHER2 users. They are backed-up regularly offsite for
+of critical source code and data for Cirrus users. They are backed-up regularly offsite for
 disaster recovery purposes and support recovery of data that has been deleted by accident. There is a
 total of 1 PB usable space available on the home file systems.
 
@@ -80,7 +80,7 @@ directory* will be at:
 
 > ## Home file system and Home directory
 > A potential source of confusion is the distinction between the *home file system* which is
-> the storage system on ARCHER2 used for critical data and your *home directory* which is a 
+> the storage system on Cirrus used for critical data and your *home directory* which is a 
 > Linux concept of the directory that you are placed into when you first login, that is 
 > stored in the `$HOME` environment variable and that can be accessed with the `cd ~` command.
 {: .callout}
@@ -143,7 +143,7 @@ directory will be at:
 
 You can view your work file system use and quota through SAFE in the same way as described 
 for the home file system above. If you want more up to date information, you can query 
-the quotas and use directly on ARCHER2 itself using the `lfs quota` command. For example,
+the quotas and use directly on Cirrus itself using the `lfs quota` command. For example,
 to query your project quota on the work file system you could use:
 
 ```
@@ -236,7 +236,7 @@ use in exactly the same way.
 
 ## System software
 
-The ARCHER2 system runs the * HPE Cray Linux Environment* which is based on SUSE Enterprise Linux.
+The Cirrus system runs the * HPE Cray Linux Environment* which is based on SUSE Enterprise Linux.
 The service officially supports the *bash* shell for interactive access, shell scripting and
 job submission scripts. The scheduling software is Slurm.
 
@@ -254,7 +254,7 @@ The largest differences from ARCHER are:
    - Addition of optimised Python 3 and R environments
    - Lack of Intel compilers
 
-On top of the HPE-provided software, the EPCC ARCHER2 CSE service have installed a wide range 
+On top of the HPE-provided software, the EPCC Cirrus CSE service have installed a wide range 
 of modelling and simulation software, additional scientific and numeric libraries, data analysis
 tools and other useful software. Some examples of the software installed are:
 
@@ -268,15 +268,15 @@ tools and other useful software. Some examples of the software installed are:
 | Software tools | CDO, CGNS, NCL, NCO, Paraview, PLUMED, PyTorch, Tensorflow, VMD |
 
 > ## Licensed software
-> For licensed software installed on ARCHER2, users are expected to bring their own licences to
-> the service with them. The ARCHER2 service does not provide software licences for use by 
+> For licensed software installed on Cirrus, users are expected to bring their own licences to
+> the service with them. The Cirrus service does not provide software licences for use by 
 > users.
 {: .callout}
 
-More information on the software available on ARCHER2 can be found in
-[the ARCHER2 Documentation](https://docs.archer2.ac.uk).
+More information on the software available on Cirrus can be found in
+[the Cirrus Documentation](https://docs.archer2.ac.uk).
 
-ARCHER2 also supports the use of [Singularity containers](https://docs.archer2.ac.uk/user-guide/containers/) for single-node and multi-node jobs.
+Cirrus also supports the use of [Singularity containers](https://docs.archer2.ac.uk/user-guide/containers/) for single-node and multi-node jobs.
 
 {% include links.md %}
 

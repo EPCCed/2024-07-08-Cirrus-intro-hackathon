@@ -1,37 +1,37 @@
 ---
-title: "ARCHER2 software environment "
+title: "Cirrus software environment "
 teaching: 30
 exercises: 10
 questions:
-- "What does the ARCHER2 software environment look like and how do I access software?"
+- "What does the Cirrus software environment look like and how do I access software?"
 - "How can I find out what software is available?"
-- "How can I request, install or get help with software on ARCHER2?"
+- "How can I request, install or get help with software on Cirrus?"
 objectives:
-- "Know how to access different software on ARCHER2 using software modules."
+- "Know how to access different software on Cirrus using software modules."
 - "Know how to find out what is installed and where to get help."
 keypoints:
 - "Software is available through modules."
 - "The CSE service can help with software issues."
 ---
 
-## Using software modules on ARCHER2
+## Using software modules on Cirrus
 
-ARCHER2 software modules use the
+Cirrus software modules use the
 [Lmod](https://lmod.readthedocs.io/) system to provide
 access to different software and versions on the system. The modules and versions available will
 change across the lifetime of the service.
 
-Software modules are provided by both HPE and the ARCHER2 CSE team at
+Software modules are provided by both HPE and the Cirrus CSE team at
 [EPCC](https://www.epcc.ed.ac.uk).
 
-## What modules are loaded when you log into ARCHER2?
+## What modules are loaded when you log into Cirrus?
 
 All users start with a default set of modules loaded into their environment. These include:
 
    - HPE Cray Compiler Environment (CCE)
    - HPE Cray MPICH MPI library
    - HPE Cray LibSci scientific and numerical libraries
-   - System modules to enable use of the ARCHER2 hardware
+   - System modules to enable use of the Cirrus hardware
 
 You can see what modules you currently have loaded with the `module list` command:
 
@@ -186,7 +186,7 @@ not specify the version when you load. An `(L)` next to a module marks one that 
 loaded in your environment. 
 
 > ## Licensed software
-> Some of the software installed on ARCHER2 requires the user to have their licence validated before they
+> Some of the software installed on Cirrus requires the user to have their licence validated before they
 > can use it on the service. More information on gaining access to licensed software through the SAFE
 > is provided below.
 {: .callout}
@@ -328,9 +328,9 @@ versions of some other modules).
 
 ## Licensed software
 
-Some of the software installed on ARCHER2 requires a user to have a valid licence agreed with the 
+Some of the software installed on Cirrus requires a user to have a valid licence agreed with the 
 software owners/developers to be able to use it (for example, VASP). Although you will be able to
-load this software on ARCHER2 you will be barred from actually using it until your licence has been
+load this software on Cirrus you will be barred from actually using it until your licence has been
 verified.
 
 You request access to licensed software through the EPCC SAFE (the web administration tool you used
@@ -346,23 +346,23 @@ to apply for your account and retrieve your initial password) by being added to 
    covered by the license because the licence holder is your supervisor, for example, please state this.
 6. Click *Submit*
 
-Your request will then be processed by the ARCHER2 Service Desk who will confirm your license with the
-software owners/developers before enabling your access to the software on ARCHER2. This can take several
+Your request will then be processed by the Cirrus Service Desk who will confirm your license with the
+software owners/developers before enabling your access to the software on Cirrus. This can take several
 days (depending on how quickly the software owners/developers take to respond) but you will be advised
 once this has been done.
 
 ## Getting help with software
 
-You can find more information on the software available on ARCHER2 in the ARCHER2 Documentation at:
+You can find more information on the software available on Cirrus in the Cirrus Documentation at:
 
-* [ARCHER2 Documentation](https://docs.archer2.ac.uk)
+* [Cirrus Documentation](https://docs.archer2.ac.uk)
 
 This includes information on the software provided by Cray and the software provided by the 
-ARCHER2 CSE Service at EPCC.
+Cirrus CSE Service at EPCC.
 
 If the software you require is not currently available or you are having trouble with the installed
 software then please contact
-[the ARCHER2 Service Desk](https://www.archer2.ac.uk/support-access/servicedesk.html) and they
+[the Cirrus Service Desk](https://www.archer2.ac.uk/support-access/servicedesk.html) and they
 will be able to assist you.
 
 {% include links.md %}
