@@ -543,6 +543,7 @@ it would if using 128 processes per node.
 > > Node    1, rank   70, thread   0, (affinity =   34)
 > > Node    1, rank   71, thread   0, (affinity =   35)
 > > ```
+> >
 > {: .solution}
 {: .challenge}
 
