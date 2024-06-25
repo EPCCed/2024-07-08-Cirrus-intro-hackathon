@@ -83,7 +83,7 @@ The lesson aims to answer the following questions:
   installed by default; Windows users should get either 
   <a href="https://mobaxterm.mobatek.net/">MobaXterm</a> or 
   <a href="https://www.putty.org/">PuTTY</a>. They are also required to abide 
-  by the <a href="https://www.archer2.ac.uk/about/policies/code-of-conduct.html">Cirrus Code of Conduct</a>.
+  by the <a href="https://www.cirrus.ac.uk/about/policies/tandc.html">Cirrus Terms and Conditions of Access</a>.
 </p>
 
 {% comment %}

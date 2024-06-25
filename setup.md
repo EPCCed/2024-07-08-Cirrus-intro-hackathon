@@ -30,7 +30,7 @@ Linux users do not need to install anything, you should be set!
 
 ## Account on Cirrus
 
-Please sign up for your account on our HPC machine, [Cirrus](https://www.archer2.ac.uk/), which will be available to
+Please sign up for your account on our HPC machine, [Cirrus](https://www.cirrus.ac.uk/), which will be available to
 you for the duration of the course and for a few days afterwards, to allow you to
 complete the practical exercises and put some of what you have learned into practice.
 
@@ -48,7 +48,7 @@ If you are already registered on the ARCHER or Tier-2 SAFE you do not need to re
 ### Sign up for an account on Cirrus through SAFE
 
 In addition to your password, you will need an SSH key pair to access Cirrus. There is useful guidance on how
-to generate SSH key pairs in [the Cirrus documentation](https://docs.archer2.ac.uk/user-guide/connecting/#ssh-key-pairs).
+to generate SSH key pairs in [the Cirrus documentation](ihttps://docs.cirrus.ac.uk/user-guide/connecting/#ssh-key-pairs).
 It is useful to have your SSH key pair generated before you request an account on Cirrus as you can add it when 
 you request the account
 
@@ -72,7 +72,7 @@ Once this has been done, you should be sent an email. _If you have not received 
 
 ### Log into Cirrus
 
-You should now be able to log into Cirrus by following the [login instructions in the Cirrus documentation](https://docs.archer2.ac.uk/user-guide/connecting/#ssh-clients).
+You should now be able to log into Cirrus by following the [login instructions in the Cirrus documentation](https://docs.cirrus.ac.uk/user-guide/connecting/).
 
 ## Using an existing Cirrus account
 
