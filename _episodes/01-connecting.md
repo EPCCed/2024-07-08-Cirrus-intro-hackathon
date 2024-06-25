@@ -8,7 +8,7 @@ objectives:
 - "Understand how to connect to Cirrus."
 - "Know how to transfer data onto and off of Cirrus efficiently."
 keypoints:
-- "Cirrus's login address is `login.archer2.ac.uk`."
+- "Cirrus's login address is `login.cirrus.ac.uk`."
 - "The password policy for Cirrus is well documented."
 - "There are a number of ways to transfer data to/from Cirrus."
 ---
@@ -18,13 +18,13 @@ keypoints:
 The Cirrus login address is
 
 ```
-login.archer2.ac.uk
+login.cirrus.ac.uk
 ```
 {: .language-bash}
 
 Access to Cirrus is via SSH using **both** a time-based code (TOTP) and a passphrase-protected SSH key pair. As an
 additional security measure, newly created accounts must also use a one time password retrieved from the SAFE 
-web adminsitration service for the first ever login.
+web administration service for the first ever login.
 
 ## TOTP
 
@@ -46,7 +46,7 @@ The public part of the key pair is associated with your account using the SAFE w
 See the Cirrus User and Best Practice Guide for information on how to create SSH key pairs
 and associate them with your account:
 
-* [Connecting to Cirrus](https://docs.archer2.ac.uk/user-guide/connecting/)
+* [Connecting to Cirrus](https://docs.cirrus.ac.uk/user-guide/connecting/)
 
 > ## Log in to Cirrus
 > Once you have managed to setup your TOTP and SSH key pair try to log into Cirrus for the
@@ -60,8 +60,10 @@ and associate them with your account:
 > to enter your initial password from SAFE again (this will be referred to as your LDAP
 > password). Once you have entered this, you will be prompted to choose a new password
 > which you must enter twice. The new password you enter must conform to the
-> [Cirrus Password Policy](https://www.archer2.ac.uk/about/policies/passwords_usernames.html).
-> Once you have changed the passord in this way, you should be able to log on with just
+> [Cirrus Password Policy](https://www.archer2.ac.uk/about/policies/passwords_usernames.html)
+> (please note that the Cirrus Password Policy is the same as the ARCHER2 Password Policy, hence
+> the re-direct to the ARCHER2 webpage).
+> Once you have changed the password in this way, you should be able to log on with just
 > the SSH key and TOTP combination.
 {: .challenge}
 
@@ -76,7 +78,7 @@ the data to. The three main options are:
 
 More information on data transfer mechanisms can be found in the Cirrus User and Best Practice Guide:
 
-* [Data management and transfer](https://docs.archer2.ac.uk/user-guide/data/)
+* [Data management and transfer](https://docs.cirrus.ac.uk/user-guide/data/)
 
 ## Data transfer best practice
 
