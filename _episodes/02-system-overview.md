@@ -30,7 +30,7 @@ alt="Cirrus architecture diagram" caption="Cirrus architecture" %}
 ## Compute nodes
 
 There are 280 CPU compute nodes and 36 GPU compute nodes in total, giving 10,080 CPU compute cores and 144 GPUs on the full Cirrus system.
-The CPU compute nodes have 256 GB memory per node, and the GPU compute nodes have 384 GB per node. All of the compute nodes are linked together using the high-performance
+The CPU compute nodes have 256 GiB memory per node, and the GPU compute nodes have 384 GiB per node. All of the compute nodes are linked together using the high-performance
 Infiniband fabric interconnect.
 
 Access to the compute nodes is controlled by the Slurm scheduling system which supports
@@ -43,7 +43,7 @@ Compute node summary:
 | Processors | 2x Intel Xeon E5-2695 (Broadwell), 2.1 GHz, 18-core | 2x Intel Xeon Gold 6148 (Cascade Lake), 2.5 GHz, 20-core |
 | Cores per node | 36 | 40 |
 | NUMA | 2 NUMA regions per node, 18 cores per NUMA region | 2 NUMA regions per node, 20 cores per NUMA region |
-| Memory Capacity | 256 GB | 384 GB |
+| Memory Capacity | 256 GiB | 384 GiB |
 | GPUs per node | | 4x NVIDIA Tesla V100-SXM2-16GB (Volta) |
 | Interconnect Bandwidth | 54.5 GB/s | 54.5 GB/s |
 
