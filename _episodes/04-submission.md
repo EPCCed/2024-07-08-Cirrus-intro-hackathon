@@ -32,7 +32,7 @@ Full documentation on Slurm on Cirrus can be found in the [Running Jobs on Cirru
 The `sinfo` command shows the current state of the compute nodes known to the scheduler:
 
 ```
-auser@ln01:~> sinfo
+auser@cirrus-login2:~> sinfo
 ```
 {: .language-bash}
 ```
@@ -78,7 +78,7 @@ If you prefer to see the state of individual nodes, you can use the `sinfo -N -l
 {: .callout}
 
 ```
-auser@ln01:~> sinfo -N -l
+auser@cirrus-login2:~> sinfo -N -l
 ```
 {: .language-bash}
 ```
@@ -112,7 +112,7 @@ nid001015      1  standard   allocated 256    2:64:2 227328        0      1 COMP
 > command to see the name, CPUs and memory available on the worker nodes (the instructors will give you the ID of
 > the compute node to use):
 > ```
-> [auser@ln01:~> sinfo -n nid001000 -o "%n %c %m"
+> [auser@cirrus-login2:~> sinfo -n nid001000 -o "%n %c %m"
 > ```
 > {: .language-bash}
 > This should display the resources available for a standard node. Are they what you expect given what we learnt
@@ -195,7 +195,7 @@ You use the `sbatch` command to submit job submission scripts to the scheduler. 
 above script was saved in a file called `test_job.slurm`, you would submit it with:
 
 ```
-auser@ln01:~> sbatch test_job.slurm
+auser@cirrus-login2:~> sbatch test_job.slurm
 ```
 {: .language-bash}
 ```
@@ -211,7 +211,7 @@ You use the `squeue` command to show the current state of the queues on Cirrus. 
 will show all jobs in the queue:
 
 ```
-auser@ln01:~> squeue
+auser@cirrus-login2:~> squeue
 ```
 {: .language-bash}
 ```
@@ -1341,9 +1341,9 @@ For example, to execute `xthi` across all cores on two nodes (1 MPI process per 
 OpenMP threading) within an interactive job you would issue the following commands:
 
 ```
-auser@ln01:~> export OMP_NUM_THREADS=1
-auser@ln01:~> module load xthi
-auser@ln01:~> srun --partition=standard --qos=short --nodes=2 --ntasks-per-node=128 --cpus-per-task=1 --time=0:10:0 --account=ta130 xthi
+auser@cirrus-login2:~> export OMP_NUM_THREADS=1
+auser@cirrus-login2:~> module load xthi
+auser@cirrus-login2:~> srun --partition=standard --qos=short --nodes=2 --ntasks-per-node=128 --cpus-per-task=1 --time=0:10:0 --account=ta130 xthi
 ```
 {: .language-bash}
 ```
