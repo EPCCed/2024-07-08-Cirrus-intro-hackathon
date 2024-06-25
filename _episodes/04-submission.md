@@ -25,7 +25,7 @@ available to users. The main commands you will use with Slurm on Cirrus are:
 * `scancel`: Cancel a job
 * `srun`: Used within a batch job script or interactive job session to start a parallel program
 
-Full documentation on Slurm on Cirrus can be found in the [Running Jobs on Cirrus](https://docs.archer2.ac.uk/user-guide/scheduler/) section of the Cirrus documentations.
+Full documentation on Slurm on Cirrus can be found in the [Running Jobs on Cirrus](https://docs.cirrus.ac.uk/user-guide/batch/) section of the Cirrus documentations.
 
 ## Finding out what resources are available: `sinfo`
 
