@@ -103,8 +103,8 @@ auser@r1i0n14a: ->
 {: .output}
 
 You will know that you are connected because the node name will
-change from `cirrus-loginX` to `rXiXnXa`. You will need the node ID
-later -- make a note of it.
+change from `cirrus-loginX` to the node ID (which will look like `r1i0n14a`).
+You will need the node ID later -- make a note of it.
 
 Once the interactive session has started, start the JupyterLab
 server by running the following (note: you will need to change `<port_number>` to a number of your choice between 5000-65535):
@@ -162,7 +162,26 @@ JupyterLab by copying the `http:/127.0.0.1:<port_number>/lab/token=<string>` URl
 
 ### Accessing the JupyterLab server from MobaXTerm on a Windows machine
 
-For this, you will need to configure an SSH tunnel on MobaXTerm.
+For this, you will need to configure an SSH tunnel on MobaXTerm:
+
+  1. Click on the `Tunnelling` button above the MobaXterm terminal. Create a new tunnel by clicking on `New SSH tunnel` in the window that opens.
+
+  2. In the new window that opens, make sure the `Local port forwarding` radio button is selected.
+
+  3. In the `forwarded port` text box on the left under `My computer with MobaXterm`, enter the `<port_number>` that you chose when setting up the JupyterLab server.
+
+  4. In the three text boxes on the bottom right under `SSH server` enter `login.cirrus.ac.uk`, your Cirrus username, and then `22`.
+
+  5. At the top right, under `Remote server`, enter the Cirrus compute node ID that you noted earlier followed by the `<port_number>`.
+
+  6. Click on the `Save` button.
+
+  7. In the tunnelling window, you will now see a new row for the settings you just entered. If you like, you can give a name to the tunnel in the leftmost column to identify it. Click on the small key icon close to the right for the new connection to tell MobaXterm which SSH private key to use when connecting to Cirrus. You should tell it to use the same `.ppk` private key that you normally use.
+
+  8. The tunnel should now be configured. Click on the small start button (like a play `>` icon) for the new tunnel to open it. You'll be asked to enter your Cirrus password or TOTP -- please do so.
+
+Once the connection is established, you can access and run
+JupyterLab by copying the `http:/127.0.0.1:<port_number>/lab/token=<string>` URl into a web browser.
 
 {% include links.md %}
 
