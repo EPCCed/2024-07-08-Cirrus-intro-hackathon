@@ -1,5 +1,5 @@
 ---
-title: "Cirrus software environment "
+title: "(Optional extra: not part of the course) Cirrus software environment "
 teaching: 30
 exercises: 10
 questions:

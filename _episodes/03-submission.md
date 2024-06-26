@@ -319,178 +319,7 @@ locations.
 > > Node    0, rank   17, thread   0, (affinity =   17)
 > > Node    0, rank   18, thread   0, (affinity =   18)
 > > Node    0, rank   19, thread   0, (affinity =   19)
-> > Node    0, rank   20, th### Underpopulation of nodes
-
-You may want to *underpopulate* nodes on Cirrus to access more memory or more memory
-bandwidth per process or for other reasons. Underpopulation in this way is achieved by
-altering the Slurm options, typically by setting the `--ntasks-per-node` option. You
-usually also need to set the `--cpus-per-task` option to ensure that the processes are
-evenly distributed across NUMA regions on the node.
-
-For example, to half-populate a node with processes (usually MPI processes) to give 64
-processes per node, you would set the following options:
-
- - `--ntasks-per-node=64` - Sets 64 processes per node
- - `--cpus-per-task=2` - Sets a stride of 2 cores between processes to ensure that they
-   are evenly distributed across the node
-
-If you did this, then each process will have access to double the amount of memory than
-it would if using 128 processes per node.
-
-> ## Tip
-> You will usually want the product of `ntasks-per-node` and `cpus-per-task` to be
-> equal to 128 (the number of physical cores on a node). In the case above,
-> 64&times;2 = 128.
-{: .callout}
-
-> ## Underpopulation of nodes
-> Can you state the `sbatch` options you would use to run `xthi` on 4
-> nodes with 32 processes per node?
->
-> Once you have your answer run them in job script and check that the binding of processes to
-> nodes and cores output by `xthi` is what you expect.
->
-> > ## Solution
-> > The options you need are: `--nodes=4 --ntasks-per-node=32 --cpus-per-task=4`. The output
-> > from running this should look somethign like:
-> > ```
-> > Node summary for    4 nodes:
-> > Node    0, hostname nid001338, mpi  32, omp   1, executable xthi
-> > Node    1, hostname nid001339, mpi  32, omp   1, executable xthi
-> > Node    2, hostname nid001340, mpi  32, omp   1, executable xthi
-> > Node    3, hostname nid001341, mpi  32, omp   1, executable xthi
-> > MPI summary: 128 ranks
-> > Node    0, rank    0, thread   0, (affinity =  0-3)
-> > Node    0, rank    1, thread   0, (affinity =  4-7)
-> > Node    0, rank    2, thread   0, (affinity = 8-11)
-> > Node    0, rank    3, thread   0, (affinity = 12-15)
-> > Node    0, rank    4, thread   0, (affinity = 16-19)
-> > Node    0, rank    5, thread   0, (affinity = 20-23)
-> > Node    0, rank    6, thread   0, (affinity = 24-27)
-> > Node    0, rank    7, thread   0, (affinity = 28-31)
-> > Node    0, rank    8, thread   0, (affinity = 32-35)
-> > Node    0, rank    9, thread   0, (affinity = 36-39)
-> > Node    0, rank   10, thread   0, (affinity = 40-43)
-> > Node    0, rank   11, thread   0, (affinity = 44-47)
-> > Node    0, rank   12, thread   0, (affinity = 48-51)
-> > Node    0, rank   13, thread   0, (affinity = 52-55)
-> > Node    0, rank   14, thread   0, (affinity = 56-59)
-> > Node    0, rank   15, thread   0, (affinity = 60-63)
-> > Node    0, rank   16, thread   0, (affinity = 64-67)
-> > Node    0, rank   17, thread   0, (affinity = 68-71)
-> > Node    0, rank   18, thread   0, (affinity = 72-75)
-> > Node    0, rank   19, thread   0, (affinity = 76-79)
-> > Node    0, rank   20, thread   0, (affinity = 80-83)
-> > Node    0, rank   21, thread   0, (affinity = 84-87)
-> > Node    0, rank   22, thread   0, (affinity = 88-91)
-> > Node    0, rank   23, thread   0, (affinity = 92-95)
-> > Node    0, rank   24, thread   0, (affinity = 96-99)
-> > Node    0, rank   25, thread   0, (affinity = 100-103)
-> > Node    0, rank   26, thread   0, (affinity = 104-107)
-> > Node    0, rank   27, thread   0, (affinity = 108-111)
-> > Node    0, rank   28, thread   0, (affinity = 112-115)
-> > Node    0, rank   29, thread   0, (affinity = 116-119)
-> > Node    0, rank   30, thread   0, (affinity = 120-123)
-> > Node    0, rank   31, thread   0, (affinity = 124-127)
-> > Node    1, rank   32, thread   0, (affinity =  0-3)
-> > Node    1, rank   33, thread   0, (affinity =  4-7)
-> > Node    1, rank   34, thread   0, (affinity = 8-11)
-> > Node    1, rank   35, thread   0, (affinity = 12-15)
-> > Node    1, rank   36, thread   0, (affinity = 16-19)
-> > Node    1, rank   37, thread   0, (affinity = 20-23)
-> > Node    1, rank   38, thread   0, (affinity = 24-27)
-> > Node    1, rank   39, thread   0, (affinity = 28-31)
-> > Node    1, rank   40, thread   0, (affinity = 32-35)
-> > Node    1, rank   41, thread   0, (affinity = 36-39)
-> > Node    1, rank   42, thread   0, (affinity = 40-43)
-> > Node    1, rank   43, thread   0, (affinity = 44-47)
-> > Node    1, rank   44, thread   0, (affinity = 48-51)
-> > Node    1, rank   45, thread   0, (affinity = 52-55)
-> > Node    1, rank   46, thread   0, (affinity = 56-59)
-> > Node    1, rank   47, thread   0, (affinity = 60-63)
-> > Node    1, rank   48, thread   0, (affinity = 64-67)
-> > Node    1, rank   49, thread   0, (affinity = 68-71)
-> > Node    1, rank   50, thread   0, (affinity = 72-75)
-> > Node    1, rank   51, thread   0, (affinity = 76-79)
-> > Node    1, rank   52, thread   0, (affinity = 80-83)
-> > Node    1, rank   53, thread   0, (affinity = 84-87)
-> > Node    1, rank   54, thread   0, (affinity = 88-91)
-> > Node    1, rank   55, thread   0, (affinity = 92-95)
-> > Node    1, rank   56, thread   0, (affinity = 96-99)
-> > Node    1, rank   57, thread   0, (affinity = 100-103)
-> > Node    1, rank   58, thread   0, (affinity = 104-107)
-> > Node    1, rank   59, thread   0, (affinity = 108-111)
-> > Node    1, rank   60, thread   0, (affinity = 112-115)
-> > Node    1, rank   61, thread   0, (affinity = 116-119)
-> > Node    1, rank   62, thread   0, (affinity = 120-123)
-> > Node    1, rank   63, thread   0, (affinity = 124-127)
-> > Node    2, rank   64, thread   0, (affinity =  0-3)
-> > Node    2, rank   65, thread   0, (affinity =  4-7)
-> > Node    2, rank   66, thread   0, (affinity = 8-11)
-> > Node    2, rank   67, thread   0, (affinity = 12-15)
-> > Node    2, rank   68, thread   0, (affinity = 16-19)
-> > Node    2, rank   69, thread   0, (affinity = 20-23)
-> > Node    2, rank   70, thread   0, (affinity = 24-27)
-> > Node    2, rank   71, thread   0, (affinity = 28-31)
-> > Node    2, rank   72, thread   0, (affinity = 32-35)
-> > Node    2, rank   73, thread   0, (affinity = 36-39)
-> > Node    2, rank   74, thread   0, (affinity = 40-43)
-> > Node    2, rank   75, thread   0, (affinity = 44-47)
-> > Node    2, rank   76, thread   0, (affinity = 48-51)
-> > Node    2, rank   77, thread   0, (affinity = 52-55)
-> > Node    2, rank   78, thread   0, (affinity = 56-59)
-> > Node    2, rank   79, thread   0, (affinity = 60-63)
-> > Node    2, rank   80, thread   0, (affinity = 64-67)
-> > Node    2, rank   81, thread   0, (affinity = 68-71)
-> > Node    2, rank   82, thread   0, (affinity = 72-75)
-> > Node    2, rank   83, thread   0, (affinity = 76-79)
-> > Node    2, rank   84, thread   0, (affinity = 80-83)
-> > Node    2, rank   85, thread   0, (affinity = 84-87)
-> > Node    2, rank   86, thread   0, (affinity = 88-91)
-> > Node    2, rank   87, thread   0, (affinity = 92-95)
-> > Node    2, rank   88, thread   0, (affinity = 96-99)
-> > Node    2, rank   89, thread   0, (affinity = 100-103)
-> > Node    2, rank   90, thread   0, (affinity = 104-107)
-> > Node    2, rank   91, thread   0, (affinity = 108-111)
-> > Node    2, rank   92, thread   0, (affinity = 112-115)
-> > Node    2, rank   93, thread   0, (affinity = 116-119)
-> > Node    2, rank   94, thread   0, (affinity = 120-123)
-> > Node    2, rank   95, thread   0, (affinity = 124-127)
-> > Node    3, rank   96, thread   0, (affinity =  0-3)
-> > Node    3, rank   97, thread   0, (affinity =  4-7)
-> > Node    3, rank   98, thread   0, (affinity = 8-11)
-> > Node    3, rank   99, thread   0, (affinity = 12-15)
-> > Node    3, rank  100, thread   0, (affinity = 16-19)
-> > Node    3, rank  101, thread   0, (affinity = 20-23)
-> > Node    3, rank  102, thread   0, (affinity = 24-27)
-> > Node    3, rank  103, thread   0, (affinity = 28-31)
-> > Node    3, rank  104, thread   0, (affinity = 32-35)
-> > Node    3, rank  105, thread   0, (affinity = 36-39)
-> > Node    3, rank  106, thread   0, (affinity = 40-43)
-> > Node    3, rank  107, thread   0, (affinity = 44-47)
-> > Node    3, rank  108, thread   0, (affinity = 48-51)
-> > Node    3, rank  109, thread   0, (affinity = 52-55)
-> > Node    3, rank  110, thread   0, (affinity = 56-59)
-> > Node    3, rank  111, thread   0, (affinity = 60-63)
-> > Node    3, rank  112, thread   0, (affinity = 64-67)
-> > Node    3, rank  113, thread   0, (affinity = 68-71)
-> > Node    3, rank  114, thread   0, (affinity = 72-75)
-> > Node    3, rank  115, thread   0, (affinity = 76-79)
-> > Node    3, rank  116, thread   0, (affinity = 80-83)
-> > Node    3, rank  117, thread   0, (affinity = 84-87)
-> > Node    3, rank  118, thread   0, (affinity = 88-91)
-> > Node    3, rank  119, thread   0, (affinity = 92-95)
-> > Node    3, rank  120, thread   0, (affinity = 96-99)
-> > Node    3, rank  121, thread   0, (affinity = 100-103)
-> > Node    3, rank  122, thread   0, (affinity = 104-107)
-> > Node    3, rank  123, thread   0, (affinity = 108-111)
-> > Node    3, rank  124, thread   0, (affinity = 112-115)
-> > Node    3, rank  125, thread   0, (affinity = 116-119)
-> > Node    3, rank  126, thread   0, (affinity = 120-123)
-> > Node    3, rank  127, thread   0, (affinity = 124-127)
-> > ```
-> {: .solution}
-{: .challenge}read   0, (affinity =   20)
+> > Node    0, rank   20, thread   0, (affinity =   20)
 > > Node    0, rank   21, thread   0, (affinity =   21)
 > > Node    0, rank   22, thread   0, (affinity =   22)
 > > Node    0, rank   23, thread   0, (affinity =   23)
@@ -547,6 +376,55 @@ it would if using 128 processes per node.
 > {: .solution}
 {: .challenge}
 
+### Submitting jobs to GPU nodes
+
+
+
+### Interactive jobs: direct `srun`
+
+Similar to the batch jobs covered above, users can also run interactive jobs using the `srun`
+command directly. `srun` used in this way takes the same arguments as `sbatch` but, obviously, these are
+specified on the command line rather than in a job submission script. As for `srun` within
+a batch job, you should also provide the name of the executable you want to run.
+
+For example, to execute `xthi` across all cores on two nodes (1 MPI process per core and no
+OpenMP threading) within an interactive job you would issue the following commands:
+
+```
+auser@cirrus-login2:~> export OMP_NUM_THREADS=1
+auser@cirrus-login2:~> module load mpt
+auser@cirrus-login2:~> export PATH=$PATH:/work/z04/shared/jsindt/xthi/src
+auser@cirrus-login2:~> srun --partition=standard --qos=short --nodes=2 --ntasks-per-node=36 --cpus-per-task=1 --time=0:10:0 --account=ic084 --exclusive xthi_mpi_mp
+```
+{: .language-bash}
+```
+Node summary for    2 nodes:
+Node    0, hostname r1i0n23, mpi  36, omp   1, executable xthi_mpi_mp
+Node    1, hostname r1i0n24, mpi  36, omp   1, executable xthi_mpi_mp
+MPI summary: 72 ranks
+Node    0, rank    0, thread   0, (affinity = 0,36)
+Node    0, rank    1, thread   0, (affinity = 18,54)
+Node    0, rank    2, thread   0, (affinity = 1,37)
+Node    0, rank    3, thread   0, (affinity = 19,55)
+Node    0, rank    4, thread   0, (affinity = 2,38)
+Node    0, rank    5, thread   0, (affinity = 20,56)
+Node    0, rank    6, thread   0, (affinity = 3,39)
+Node    0, rank    7, thread   0, (affinity = 21,57)
+Node    0, rank    8, thread   0, (affinity = 4,40)
+Node    0, rank    9, thread   0, (affinity = 22,58)
+Node    0, rank   10, thread   0, (affinity = 5,41)
+Node    0, rank   11, thread   0, (affinity = 23,59)
+Node    0, rank   12, thread   0, (affinity = 6,42)
+Node    0, rank   13, thread   0, (affinity = 24,60)
+...long output trimmed...
+```
+{: .output}
+
+## Other useful information
+
+In this section we briefly introduce other scheduler topics that may be useful to users. We
+provide links to more information on these areas for people who may want to explore these 
+areas more. 
 
 ### Hybrid MPI and OpenMP jobs
 
@@ -555,14 +433,14 @@ When running hybrid MPI (with multiple processes) and OpenMP
 using `srun` for the multiple OpenMP threads that will be associated with each MPI process.
 
 As we saw above, you can use the options to `sbatch` to control how many parallel processes are
-placed on each compute node and the `--cpus-per-task` option to set the stride 
+placed on each compute node and the `--cpus-per-task` option to set the stride
 between parallel processes. The `--cpus-per-task` option is also used to accommodate the OpenMP
 threads that are launched for each MPI process - the value
 for `--cpus-per-task` should usually be the same as that for `OMP_NUM_THREADS`. To ensure
 you get the correct thread pinning, you also need to specify an additional OpenMP environment
 variable. Specifically:
 
-   - Set the `OMP_PLACES` environment variable to `cores` with `export OMP_PLACES=cores` in 
+   - Set the `OMP_PLACES` environment variable to `cores` with `export OMP_PLACES=cores` in
      your job submission script
 
 As an example, consider the job script below that runs across 4 nodes with 8 MPI processes
@@ -686,53 +564,6 @@ on nodes where all cores are used:
 *  6 MPI processes per node and  6 OpenMP threads per process: equivalent to 3 MPI processes per NUMA region
 * 12 MPI processes per node and  3 OpenMP threads per process: equivalent to 6 MPI processes per NUMA region
 * 18 MPI processes per node and  2 OpenMP threads per process: equivalent to 9 MPI processes per NUMA region
-
-## Other useful information
-
-In this section we briefly introduce other scheduler topics that may be useful to users. We
-provide links to more information on these areas for people who may want to explore these 
-areas more. 
-
-### Interactive jobs: direct `srun` 
-
-Similar to the batch jobs covered above, users can also run interactive jobs using the `srun`
-command directly. `srun` used in this way takes the same arguments as `sbatch` but, obviously, these are 
-specified on the command line rather than in a job submission script. As for `srun` within 
-a batch job, you should also provide the name of the executable you want to run.
-
-For example, to execute `xthi` across all cores on two nodes (1 MPI process per core and no
-OpenMP threading) within an interactive job you would issue the following commands:
-
-```
-auser@cirrus-login2:~> export OMP_NUM_THREADS=1
-auser@cirrus-login2:~> module load mpt
-auser@cirrus-login2:~> export PATH=$PATH:/work/z04/shared/jsindt/xthi/src
-auser@cirrus-login2:~> srun --partition=standard --qos=short --nodes=2 --ntasks-per-node=36 --cpus-per-task=1 --time=0:10:0 --account=ic084 --exclusive xthi_mpi_mp
-```
-{: .language-bash}
-```
-Node summary for    2 nodes:
-Node    0, hostname r1i0n23, mpi  36, omp   1, executable xthi_mpi_mp
-Node    1, hostname r1i0n24, mpi  36, omp   1, executable xthi_mpi_mp
-MPI summary: 72 ranks
-Node    0, rank    0, thread   0, (affinity = 0,36)
-Node    0, rank    1, thread   0, (affinity = 18,54)
-Node    0, rank    2, thread   0, (affinity = 1,37)
-Node    0, rank    3, thread   0, (affinity = 19,55)
-Node    0, rank    4, thread   0, (affinity = 2,38)
-Node    0, rank    5, thread   0, (affinity = 20,56)
-Node    0, rank    6, thread   0, (affinity = 3,39)
-Node    0, rank    7, thread   0, (affinity = 21,57)
-Node    0, rank    8, thread   0, (affinity = 4,40)
-Node    0, rank    9, thread   0, (affinity = 22,58)
-Node    0, rank   10, thread   0, (affinity = 5,41)
-Node    0, rank   11, thread   0, (affinity = 23,59)
-Node    0, rank   12, thread   0, (affinity = 6,42)
-Node    0, rank   13, thread   0, (affinity = 24,60)
-...long output trimmed...
-```
-{: .output}
-
 
 <!-- Need to add information on the solid state storage and Slurm once it is in place
 

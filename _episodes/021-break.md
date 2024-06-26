@@ -1,6 +1,6 @@
 ---
 title: "Break"
-break: 30
+break: 20
 ---
 
 Comfort break

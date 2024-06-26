@@ -1,7 +1,7 @@
 ---
 title: "Overview of the Cirrus system"
-teaching: 30
-exercises: 15
+teaching: 20
+exercises: 10
 questions:
 - "What hardware and software is available on Cirrus?"
 - "How does the hardware fit together?"

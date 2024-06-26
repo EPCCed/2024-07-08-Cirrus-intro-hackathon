@@ -1,6 +1,6 @@
 ---
 title: "Next steps"
-teaching: 15
+teaching: 10
 exercises: 0
 questions:
 - "Where can I get further help on using Cirrus?"

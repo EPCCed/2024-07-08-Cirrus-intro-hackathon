@@ -1,7 +1,7 @@
 ---
 title: "Connecting to Cirrus and transferring data"
 teaching: 20
-exercises: 15
+exercises: 10
 questions:
 - "How can I access Cirrus interactively and transfer data?"
 objectives:
