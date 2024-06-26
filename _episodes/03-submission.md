@@ -1,7 +1,7 @@
 ---
 title: "Cirrus scheduler: Slurm"
-teaching: 30
-exercises: 20
+teaching: 20
+exercises: 10
 questions:
 - "How do I write job submission scripts?"
 - "How do I control jobs?"
@@ -378,14 +378,55 @@ locations.
 
 ### Submitting jobs to GPU nodes
 
+To run a GPU job, a SLURM submission must:
 
+ * Specify a GPU partition (usually by setting `--partition=gpu`).
+ * Specify a GPU QoS
+ * Specify the number of GPUs requested per node (this is done with the
+   `--gres=GPU:N` where `N` can be 1, 2, 3, or 4).
+
+Unlike the CPU compute nodes, you should **not** use the `--exclusive` flag
+when running on the GPU partition. If you keep this flag, you will reserve all
+resources on the node but only be able to access the number defined in
+`--gres=gpu:N`.
+
+> ## Using reservations
+> The organisers of this course have reserved GPU nodes specifically for this
+> course. To run on the GPU reservation, you will need to use the following
+> Slurm variables:
+>
+> ```
+> #!/bin/bash
+> #SBATCH --job-name=my_mpi_job
+> #SBATCH --time=0:10:0
+> #SBATCH --account=ic084
+> #SBATCH --partition=gpu
+> #SBATCH --qos=reservation
+> #SBATCH --reservation=<reservation_id>
+>
+> # Instructions to be run by Slurm
+> ```
+> {: .language-bash}
+>
+> You will need to replace `<reservation_id>` with the appropriate ID:
+>
+> | Reservation date and time | Reservation ID |
+> |---------------------------|----------------|
+> |  13:30-16:00 on  8th July |  ic084_1263984 |
+> |  09:00-19:00 on  9th July |  ic084_1263955 |
+> |  09:00-19:00 on 10th July |  ic084_1264032 |
+> |  08:30-19:00 on 11th July |  ic084_1263958 |
+> |  09:00-16:00 on 12th July |  ic084_1263951 |
+>
+{: .callout}
 
 ### Interactive jobs: direct `srun`
 
-Similar to the batch jobs covered above, users can also run interactive jobs using the `srun`
-command directly. `srun` used in this way takes the same arguments as `sbatch` but, obviously, these are
-specified on the command line rather than in a job submission script. As for `srun` within
-a batch job, you should also provide the name of the executable you want to run.
+Similar to the batch jobs covered above, users can also run interactive jobs
+using the `srun` command directly. `srun` used in this way takes the same
+arguments as `sbatch` but, obviously, these are specified on the command line
+rather than in a job submission script. As for `srun` within a batch job, you
+should also provide the name of the executable you want to run.
 
 For example, to execute `xthi` across all cores on two nodes (1 MPI process per core and no
 OpenMP threading) within an interactive job you would issue the following commands:
@@ -419,6 +460,16 @@ Node    0, rank   13, thread   0, (affinity = 24,60)
 ...long output trimmed...
 ```
 {: .output}
+
+Interactive jobs can also be used to open interactive sessions from the
+compute nodes. the following command allows you to login to a compute node
+and run work from there:
+
+{: .language-bash}
+```
+auser@cirrus-login2:~> srun --exclusive --nodes=1 --time=00:20:00 --account=ic084 --pty /usr/bin/bash --login
+auser@r1i0n14a: ->
+```
 
 ## Other useful information
 

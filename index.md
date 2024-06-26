@@ -81,8 +81,7 @@ The lesson aims to answer the following questions:
   tablet, Chromebook, etc.) that they have administrative privileges on. They 
   should have access to a terminal (Mac and Linux users should have a terminal 
   installed by default; Windows users should get either 
-  <a href="https://mobaxterm.mobatek.net/">MobaXterm</a> or 
-  <a href="https://www.putty.org/">PuTTY</a>. They are also required to abide 
+  <a href="https://mobaxterm.mobatek.net/">MobaXterm</a>. They are also required to abide 
   by the <a href="https://www.cirrus.ac.uk/about/policies/tandc.html">Cirrus Terms and Conditions of Access</a>.
 </p>
 
