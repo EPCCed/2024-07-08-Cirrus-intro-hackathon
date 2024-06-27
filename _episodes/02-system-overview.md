@@ -53,7 +53,7 @@ There are three different storage systems available on the current Cirrus servic
 
 * Home file systems
 * Work file systems
-* NVMe solid state file system
+* Solid state storage
 
 ### Home
 
@@ -174,9 +174,20 @@ drwxr-sr-x  2 auser  ic084      4096 Jul 20 12:09 more-interesting-data
 Remember, equivalent sharing directories exist on the home file system that you can
 use in exactly the same way.
 
-## Solid state drive
+### Solid state storage
 
+The Cirrus login and compute nodes have access to a shared, high-performance,
+solid state storage system (also known as RPOOL). This storage system is
+network mounted and shared across the login nodes and GPU compute nodes in a
+similar way to the normal, spinning-disk Lustre file system but has different
+performance characteristics.
 
+The solid state storage has a maximum usable capacity of 256 TB which is shared between all users.
+
+> ## Machine learning and solid state storage
+>
+> blah
+{: .note}
 
 ## System software
 
@@ -192,8 +203,9 @@ contains:
 | Scientific and numerical libraries | BLAS, LAPACK, BLACS, ScaLAPACK, FFTW3, HDF5, NetCDF |
 
 In addition to this, the EPCC Cirrus CSE service have installed a wide range
-of modelling and simulation software, additional scientific and numeric libraries, data analysis
-tools and other useful software. Some examples of the software installed are:
+of modelling and simulation software, additional scientific and numeric
+libraries, data analysis tools and other useful software. Some examples of the
+software installed are:
 
 | Research area | Software |
 |-|-|
