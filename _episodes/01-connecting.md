@@ -22,9 +22,7 @@ login.cirrus.ac.uk
 ```
 {: .language-bash}
 
-Access to Cirrus is via SSH using **both** a time-based code (TOTP) and a passphrase-protected SSH key pair. As an
-additional security measure, newly created accounts must also use a one time password retrieved from the SAFE 
-web administration service for the first ever login.
+Access to Cirrus is via SSH using **both** a time-based code (TOTP) and a passphrase-protected SSH key pair.
 
 ## TOTP
 
@@ -56,15 +54,6 @@ and associate them with your account:
 > ssh -i /path/to/sshkey username@login.archer2.ac.uk
 > ```
 >
-> The first time you login, you will be prompted to change your password. You will need
-> to enter your initial password from SAFE again (this will be referred to as your LDAP
-> password). Once you have entered this, you will be prompted to choose a new password
-> which you must enter twice. The new password you enter must conform to the
-> [Cirrus Password Policy](https://www.archer2.ac.uk/about/policies/passwords_usernames.html)
-> (please note that the Cirrus Password Policy is the same as the ARCHER2 Password Policy, hence
-> the re-direct to the ARCHER2 webpage).
-> Once you have changed the password in this way, you should be able to log on with just
-> the SSH key and TOTP combination.
 {: .challenge}
 
 ## Data transfer services: scp, rsync

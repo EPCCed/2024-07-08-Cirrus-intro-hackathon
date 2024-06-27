@@ -92,22 +92,44 @@ The lesson aims to answer the following questions:
   special instructions.
 {% endcomment %}
 <p id="accessibility">
-  <strong>Accessibility:</strong> We are committed to making this workshop
-  accessible to everybody.
-  The workshop organizers have checked that:
-</p>
-<ul>
-  <li>The room is wheelchair / scooter accessible.</li>
-  <li>Accessible restrooms are available.</li>
-</ul>
-<p>
-  Materials will be provided in advance of the lesson and
-  large-print handouts are available if needed by notifying the
+  <strong>Accessibility:</strong> Materials will be provided in advance of the 
+  lesson and large-print handouts are available if needed by notifying the
   organizers in advance.  If we can help making learning easier for
   you (e.g. sign-language interpreters, lactation facilities) please
   get in touch (using contact details below) and we will
   attempt to provide them.
 </p>
+
+<p id="reservation">
+  <strong>GPU queue reservations:</strong> The organisers of this course have 
+  reserved GPU nodes specifically for this course. To run on the GPU 
+  reservation, you will need to use the following Slurm variables:
+
+  ```
+  #!/bin/bash
+  #SBATCH --job-name=my_mpi_job
+  #SBATCH --time=0:10:0
+  #SBATCH --account=ic084
+  #SBATCH --partition=gpu
+  #SBATCH --qos=reservation
+  #SBATCH --reservation=<reservation_id>
+
+  # Instructions to be run by Slurm
+  ```
+  {: .language-bash}
+
+  You will need to replace `<reservation_id>` with the appropriate ID:
+
+  | Reservation date and time | Reservation ID |
+  |---------------------------|----------------|
+  |  13:30-16:00 on  8th July |  ic084_1263984 |
+  |  09:00-19:00 on  9th July |  ic084_1263955 |
+  |  09:00-19:00 on 10th July |  ic084_1264032 |
+  |  08:30-19:00 on 11th July |  ic084_1263958 |
+  |  09:00-16:00 on 12th July |  ic084_1263951 |
+
+</p>
+
 
 {% comment %}
   CONTACT EMAIL ADDRESS

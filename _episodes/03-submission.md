@@ -388,7 +388,51 @@ To run a GPU job, a SLURM submission must:
 Unlike the CPU compute nodes, you should **not** use the `--exclusive` flag
 when running on the GPU partition. If you keep this flag, you will reserve all
 resources on the node but only be able to access the number defined in
-`--gres=gpu:N`.
+`--gres=gpu:N`. Additionally, you should not  set the `--tasks-per-node` or `--cpus-per-task` flags Slurm is set up to automatically provide 10 CPU cores per GPU requested -- these will be available as 10 threads to a single process.
+
+
+> ## Changing process and thread counts on GPU nodes
+>
+> The script below will run a job on the GPU short queue. Unlike jobs run on
+> CPU nodes, there is no `#SBATCH --tasks-per-node=##` or
+> `#SBATCH --cpus-per-task=##` command in the preamble of the Slurm submission
+> submission script. Instead, these commands have been added to the `srun`
+> command.
+>
+> What happens if you change the `--tasks-per-node` and `--cpus-per-task`
+> flags in the `srun` command? How does this change as you change the number
+> of GPUS requested with the `--gres=gpu:##` command? Remember that
+> the product of (`tasks per node` and `cpus per task`) must not exceed
+> 10X the number of GPUs you've requested.
+>
+> ```
+> #!/bin/bash
+> #SBATCH --job-name=my_mpi_job
+> #SBATCH --time=0:10:0
+> #SBATCH --account=ic084
+> #SBATCH --partition=gpu
+> #SBATCH --qos=short
+> #SBATCH --gres=gpu:1
+>
+> # Now load the "xthi" package
+> module load mpt
+> export PATH=$PATH:/work/z04/shared/jsindt/xthi/src
+>
+> # srun to launch the executable
+> srun --tasks-per-node=1 --cpus-per-task=10 \
+>      --hint=nomultithread --distribution=block:block xthi_mpi_mp
+> ```
+> {: .language-bash}
+>
+>
+> > ## Solution
+> >
+> > Changing the `--tasks-per-node` command has no effect -- the job will
+> > always run on a single MPI process per GPU. Changing `--cpus-per-task`
+> > will change the number of threads available for the calculation.
+> >
+> {: .solution}
+{: .challenge}
 
 > ## Using reservations
 > The organisers of this course have reserved GPU nodes specifically for this
@@ -419,6 +463,8 @@ resources on the node but only be able to access the number defined in
 > |  09:00-16:00 on 12th July |  ic084_1263951 |
 >
 {: .callout}
+
+
 
 ### Interactive jobs: direct `srun`
 
