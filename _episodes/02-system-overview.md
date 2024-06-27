@@ -174,6 +174,10 @@ drwxr-sr-x  2 auser  ic084      4096 Jul 20 12:09 more-interesting-data
 Remember, equivalent sharing directories exist on the home file system that you can
 use in exactly the same way.
 
+## Solid state drive
+
+
+
 ## System software
 
 The Cirrus system runs the * HPE Cray Linux Environment* which is based on SUSE Enterprise Linux.

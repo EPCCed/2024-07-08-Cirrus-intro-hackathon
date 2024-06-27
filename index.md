@@ -100,8 +100,7 @@ The lesson aims to answer the following questions:
   attempt to provide them.
 </p>
 
-<p id="reservation">
-  <strong>GPU queue reservations:</strong> The organisers of this course have 
+  **GPU queue reservations:** The organisers of this course have
   reserved GPU nodes specifically for this course. To run on the GPU 
   reservation, you will need to use the following Slurm variables:
 
@@ -127,8 +126,6 @@ The lesson aims to answer the following questions:
   |  09:00-19:00 on 10th July |  ic084_1264032 |
   |  08:30-19:00 on 11th July |  ic084_1263958 |
   |  09:00-16:00 on 12th July |  ic084_1263951 |
-
-</p>
 
 
 {% comment %}
