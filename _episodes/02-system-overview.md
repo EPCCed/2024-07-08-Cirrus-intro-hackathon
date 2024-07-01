@@ -103,8 +103,8 @@ All users have their own directory on the work file systems at:
 /work/<projectID>/<subprojectID>/<userID>
 ```
 
-For example, if your username is `auser` and you are in the project `ic084` then your main home
-directory will be at:
+For example, if your username is `auser` and you are in the project `ic084` then your main *work
+directory* will be at:
 
 ```
 /work/ic084/ic084/auser
