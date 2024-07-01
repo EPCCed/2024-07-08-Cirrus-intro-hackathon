@@ -130,10 +130,10 @@ To share data with users in the same project you use the `/work/ic084/ic084/shar
 directory are correctly set to allow sharing in the project:
 
 ```
-auser@ucirrus-login2:~> mkdir /work/ic084/ic084/shared/interesting-data
-auser@ucirrus-login2:~> cp -r modelling-output /work/ic084/ic084/shared/interesting-data/
-auser@ucirrus-login2:~> chmod -R g+rX,o-rwx /work/ic084/ic084/shared/interesting-data
-auser@ucirrus-login2:~> ls -l /work/ic084/ic084/shared
+auser@cirrus-login2:~> mkdir /work/ic084/ic084/shared/interesting-data
+auser@cirrus-login2:~> cp -r modelling-output /work/ic084/ic084/shared/interesting-data/
+auser@cirrus-login2:~> chmod -R g+rX,o-rwx /work/ic084/ic084/shared/interesting-data
+auser@cirrus-login2:~> ls -l /work/ic084/ic084/shared
 ```
 {: .language-bash}
 ```
@@ -153,10 +153,10 @@ To share data with users in other projects, you use the `/work/ic084/shared` dir
 directory are correctly set to allow sharing with all other users:
 
 ```
-auser@ucirrus-login2:~> mkdir /work/ic084/shared/more-interesting-data
-auser@ucirrus-login2:~> cp -r more-modelling-output /work/ic084/shared/more-interesting-data/
-auser@ucirrus-login2:~> chmod -R go+rX /work/ic084/shared/more-interesting-data
-auser@ucirrus-login2:~> ls -l /work/ic084/shared
+auser@cirrus-login2:~> mkdir /work/ic084/shared/more-interesting-data
+auser@cirrus-login2:~> cp -r more-modelling-output /work/ic084/shared/more-interesting-data/
+auser@cirrus-login2:~> chmod -R go+rX /work/ic084/shared/more-interesting-data
+auser@cirrus-login2:~> ls -l /work/ic084/shared
 ```
 {: .language-bash}
 ```
@@ -198,7 +198,7 @@ For this course, we have created a directory on the solid state storage. You
 can access it by running:
 
 ```
-auser@ucirrus-login2:~> cd /scratch/space1/ic084
+auser@cirrus-login2:~> cd /scratch/space1/ic084
 ```
 {: .language-bash}
 
@@ -206,15 +206,15 @@ If this is your first time in this directory, you will need to create a
 directory to work from. You can do this by running:
 
 ```
-auser@ucirrus-login2:~> mkdir $USER
-auser@ucirrus-login2:~> cd $USER
+auser@cirrus-login2:~> mkdir $USER
+auser@cirrus-login2:~> cd $USER
 ```
 {: .language-bash}
 
 You can transfer data locally to this directory by running:
 
 ```
-auser@ucirrus-login2:~> cp -r /path/to/data-dir /scratch/space1/ic084/$USER/
+auser@cirrus-login2:~> cp -r /path/to/data-dir /scratch/space1/ic084/$USER/
 ```
 {: .language-bash}
 
