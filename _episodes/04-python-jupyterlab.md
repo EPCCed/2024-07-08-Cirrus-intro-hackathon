@@ -44,9 +44,10 @@ All the packages provided by these modules can be obtained by running `pip list`
 If the package you require is not listed when running `pip list`, you
 can install them using `pip`.
 
-First, you will need to name your virtual environment and provide it
-with a designated folder. Here are instructions for creating an
-environment called `myvenv` (please ensure that you change the project ID and the username for this to work):
+If you have not done this before, you will need to name your virtual environment 
+and provide it with a designated folder. Here are instructions for creating an
+environment called `myvenv` (please ensure that you change the project ID and 
+the username for this to work):
 
 {: .language-bash}
 ```
@@ -56,15 +57,17 @@ auser@cirrus-login2:~> python -m venv --system-site-packages /work/ic084/ic084/a
 
 In this example, the environment `myvenv` is created within a folder
 within `/work` to ensure that it is accessible from the compute
-nodes. The `--system-site-packages` option ensures that this new environment is based on the currently loaded `python` module.
+nodes. The `--system-site-packages` option ensures that this new environment 
+is based on the currently loaded `python` module. You only need to do this 
+step once -- your setup will stay the same for future login sessions.
 
-You must load this module to gain access to it. You can do this by
-running:
+Once you have a designated folder for your virtual environment, you must load 
+this module to gain access to it. You can do this by running:
 
 {: .language-bash}
 ```
-auser@cirrus-login2:~> extend-venv-activate /work/x01/x01/auser/myvenv
-auser@cirrus-login2:~> source /work/x01/x01/auser/myvenv/bin/activate
+auser@cirrus-login2:~> extend-venv-activate /work/ic084/ic084/auser/myvenv
+auser@cirrus-login2:~> source /work/ic084/ic084/auser/myvenv/bin/activate
 ```
 {: .output}
 
