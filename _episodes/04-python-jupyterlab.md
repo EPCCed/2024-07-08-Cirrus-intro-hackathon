@@ -100,7 +100,7 @@ First, you will need to start an interactive session on one of the compute nodes
 
 {: .language-bash}
 ```
-auser@cirrus-login2:~> srun --exclusive --nodes=1 --gres=gpu:1 --time=00:20:00 --partition=gpu --qos=reservation --reservation=ic084_1263984 --account=ic084 --pty /usr/bin/bash --login
+auser@cirrus-login2:~> srun --gres=gpu:1 --time=00:20:00 --partition=gpu --qos=reservation --reservation=ic084_1263984 --account=ic084 --pty /usr/bin/bash --login
 auser@r1i0n14a: ->
 ```
 {: .output}
