@@ -20,7 +20,7 @@ keypoints:
 
 Contacting the Cirrus Service Desk is the easiest way to get in touch with the service to ask
 any questions you have or report issues with your use of the service. You can contact the 
-Cirrus Service Desk at: [support@archer2.ac.uk](mailto:support@archer2.ac.uk).
+Cirrus Service Desk at: [support@cirrus.ac.uk](mailto:support@cirrus.ac.uk).
 
 If you have a particular issue that you would like to discuss in more depth with an expert
 from the Cirrus CSE service you can book a callback from them at a time of your convenience.
@@ -32,7 +32,7 @@ time(s) for a callback.
 
 The Cirrus service has extensive documentation available at:
 
-* [Cirrus Documentation](https://docs.archer2.ac.uk)
+* [Cirrus Documentation](https://docs.cirrus.ac.uk)
 
 This documentation covers:
 
@@ -43,9 +43,9 @@ This documentation covers:
   to help you improve your use of the service.
 * Information on the research software and software libraries available on the service.
 
-## Cirrus Training
+## Additional Training
 
-There is also lots of training available through the Cirrus service covering many different topics
+There is also lots of training available through the ARCHER2 service covering many different topics
 and to suit many different levels. Following on from this course, you may be particularly interested in:
 
 * Understanding Package Performance - a course designed to improve the efficiency of your use of
@@ -59,30 +59,22 @@ and to suit many different levels. Following on from this course, you may be par
   use of Containers in a research setting.
 
 Details of courses, the upcoming schedule and information on how to register can be found on
-[the Cirrus training pages](https://www.archer2.ac.uk/training/).
+[the ARCHER2 training pages](https://www.archer2.ac.uk/training/).
 
 ## Getting access to Cirrus for your research
 
 There are a number of different routes to obtain access to Cirrus resources.
 
-* Access Through [the EPSRC/NERC Scientific Consortia](https://www.archer2.ac.uk/research/consortia/) -
-  Time for projects within consortia remits. Often the simplest method of getting access if your research
-  is in the remit of one of the consortia.
-* Cirrus pump-priming - Small amounts of time to test Cirrus, provide proof of concept, or obtain scaling
+* Cirrus Instant Access - Small amounts of time to test Cirrus, provide proof of concept, or obtain scaling
   information for full applications (EPSRC remit science only).
+* Cirrus Scottish Academic Access - larger amounts of time for research groups based in Scotland. This funding
+  can only be applied for once per academic group.
 * Cirrus resources via research grants - larger amounts of time associated with the research project proposed.
   How this works depends on the grant awarding body.
 * UKRI Access to HPC or Pioneer Project resource calls - large amounts of resource for up to a year.
 
 More information on these access routes is available on
-[the Cirrus access page](https://www.archer2.ac.uk/support-access/access.html)
-
-## eCSE: help with improving and adding functionality to research software
-
-The Cirrus embedded computational science and engineering (eCSE) programme provides funding 
-for you or a research software engineer (RSE) of your choice to improve or add functionality
-to research software on Cirrus. To find out more about the eCSE programme and how to apply,
-see [the Cirrus eCSE pages](https://www.archer2.ac.uk/ecse/)
+[the Cirrus access page](https://www.cirrus.ac.uk/access/)
 
 {% include links.md %}
 
