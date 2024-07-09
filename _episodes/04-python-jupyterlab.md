@@ -114,14 +114,20 @@ server by running the following (note: you will need to change `<port_number>` t
 
 {: .language-bash}
 ```
-auser@r1i0n14a: -> export JUPYTER_RUNTIME_DIR=$(pwd)
+auser@r1i0n14a: -> export JUPYTER_RUNTIME_DIR=/scratch/space1/ic084/$USER
+auser@r1i0n14a: -> export HOME=/scratch/space1/ic084/$USER
 auser@r1i0n14a: -> jupyter lab --ip=0.0.0.0 --no-browser --port=<port_number>
 ```
 {: .output}
 
 The first instruction ensures that the JupyterLab server begins in
-the directory you are in. The second instruction starts the server
-and provides it with a port to use for connections.
+the directory you are in. The second instruction resets the path to 
+your `HOME` variable -- by default, Jupyter Lab will save new notebooks
+in your home directory (which, on Cirrus, is `/home/ic084/ic084/$USER`) but, 
+as this is inaccessible from teh compute nodes, we recommend that you reset 
+this variable to a path accessible from those nodes (please note that this is 
+a hacky workaround!). The third instruction starts the server and provides
+it with a port to use for connections.
 
 Once the server is setup, you will get a message saying:
 
