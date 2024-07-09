@@ -100,6 +100,9 @@ auser@cirrus-login2:~>
 
 > ## Persistent kernels for Jupyter Lab
 >
+> By default, Jupyter Lab will only load the "base" python environment defined
+> by the central module you load (with none of your packages included).
+> 
 > If you are wanting to build a virtual environment to use within Jupyter Lab,
 > you will need to install the `ipykernel` module and use this to install the
 > kernel to your venv:
@@ -110,10 +113,12 @@ auser@cirrus-login2:~>
 > python -m pip install ipykernel
 > python -m ipykernel install --user --name=myvenv
 > ```
+> {: .output}
+> 
 > Make sure to change the placeholder account name from "auser" to your
 > Cirrus username.
 >
-> This will enable you to launch Jupyter Lab as described below and to load the `myvenve`
+> This will enable you to launch Jupyter Lab as described below and to load the `myvenv`
 > kernel.
 {: .callout}
 
