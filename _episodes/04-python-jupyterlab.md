@@ -9,7 +9,11 @@ objectives:
 - "Learning how to install Python packages."
 - "Learning how to access JupyterLab locally while ensuring it runs on Cirrus GPU nodes"
 keypoints:
-- "To be completed later"
+- "You can install your own Python packages by setting up a virtual environment and
+  running `pip install`."
+- "You can host a Jupyter Lab Server on the Cirrus compute nodes."
+- "Provided that you set a port number, you can connect to Cirrus while listening to that
+  port to open a local Jupyter Notebook that runs on the Cirrus compute nodes."
 ---
 
 ## Which Python environment should I use?
@@ -93,6 +97,25 @@ environment by using the `deactivate` command:
 auser@cirrus-login2:~>
 ```
 {: .output}
+
+> ## Persistent kernels for Jupyter Lab
+>
+> If you are wanting to build a virtual environment to use within Jupyter Lab,
+> you will need to install the `ipykernel` module and use this to install the
+> kernel to your venv:
+>
+> {: language-bash}
+> ```
+> source /work/ic084/ic084/auser/myvenv/bin/activate
+> python -m pip install ipykernel
+> python -m ipykernel install --user --name=myvenv
+> ```
+> Make sure to change the placeholder account name from "auser" to your
+> Cirrus username.
+>
+> This will enable you to launch Jupyter Lab as described below and to load the `myvenve`
+> kernel.
+{: .callout}
 
 ## Using JupyterLab on Cirrus compute nodes
 
