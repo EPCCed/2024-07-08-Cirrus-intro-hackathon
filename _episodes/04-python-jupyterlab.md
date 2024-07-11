@@ -1,13 +1,13 @@
 ---
-title: "Setting up a Python environment and running JupyterLab on Cirrus compute nodes"
+title: "Setting up a Python environment and running Jupyter Lab on Cirrus compute nodes"
 teaching: 15
 exercises: 10
 questions:
 - "How can I personalise my Python environment?"
-- "How can I run JupyterLab on the Cirrus GPU nodes?"
+- "How can I run Jupyter Lab on the Cirrus GPU nodes?"
 objectives:
 - "Learning how to install Python packages."
-- "Learning how to access JupyterLab locally while ensuring it runs on Cirrus GPU nodes"
+- "Learning how to access Jupyter Lab locally while ensuring it runs on Cirrus GPU nodes"
 keypoints:
 - "You can install your own Python packages by setting up a virtual environment and
   running `pip install`."
@@ -122,7 +122,7 @@ auser@cirrus-login2:~>
 > kernel.
 {: .callout}
 
-## Using JupyterLab on Cirrus compute nodes
+## Using Jupyter Lab on Cirrus compute nodes
 
 First, you will need to start an interactive session on one of the compute nodes:
 
@@ -152,7 +152,7 @@ The first instruction ensures that the JupyterLab server begins in
 the directory you are in. The second instruction resets the path to 
 your `HOME` variable -- by default, Jupyter Lab will save new notebooks
 in your home directory (which, on Cirrus, is `/home/ic084/ic084/$USER`) but, 
-as this is inaccessible from teh compute nodes, we recommend that you reset 
+as this is inaccessible from the compute nodes, we recommend that you reset 
 this variable to a path accessible from those nodes (please note that this is 
 a hacky workaround!). The third instruction starts the server and provides
 it with a port to use for connections.
@@ -221,5 +221,3 @@ Once the connection is established, you can access and run
 JupyterLab by copying the `http:/127.0.0.1:<port_number>/lab/token=<string>` URl into a web browser.
 
 {% include links.md %}
-
-
